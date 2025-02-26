@@ -1,8 +1,0 @@
-#cloud-config
-runcmd:
-  - apt-get update
-  - apt-get install -y mysql-server
-  - systemctl start mysql
-  - systemctl enable mysql
-  - mysql_secure_installation --use-default
-  - mysql -u root -e "CREATE USER 'kimki'@'10.0.0.%' IDENTIFIED BY 'kimkiQWER123!!'; GRANT ALL PRIVILEGES ON *.* TO 'kimki'@'10.0.0.%' WITH GRANT OPTION; FLUSH PRIVILEGES;"
